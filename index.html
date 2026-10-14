@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre recetas deliciosas, fáciles y divertidas en Sazón Mágica.">
+  <title>Bizzia | Recetas para disfrutar</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <a class="logo" href="#inicio">Bizzia</a>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#recetas">Recetas</a>
+      <a href="#nosotros">Nosotros</a>
+    </nav>
+
+    <a class="nav-button" href="#recetas">¡A cocinar!</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <span class="eyebrow">UN MUNDO LLENO DE SABOR</span>
+
+        <h1>La felicidad<br>
+          tiene sabor a <span>hogar.</span>
+        </h1>
+
+        <p>
+          Descubre recetas increíbles, prepara tus platos favoritos
+          y convierte cada comida en un momento especial.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button primary" href="#recetas">Explorar recetas →</a>
+          <a class="button secondary" href="#nosotros">Conócenos</a>
+        </div>
+
+        <div class="hero-note">
+          <span>🥑</span>
+          <div>
+            <strong>Hecho con amor</strong>
+            <small>Recetas para todos los días</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+          alt="Ensalada fresca y colorida"
+        >
+        <div class="floating-card">Come rico y vive feliz</div>
+        <span class="decor decor-one">✦</span>
+        <span class="decor decor-two">✿</span>
+      </div>
+    </section>
+
+    <section class="recipe-section" id="recetas">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">👩‍🍳 TU PRÓXIMA AVENTURA</span>
+          <h2>¿Qué se te antoja hoy?</h2>
+          <p>Encuentra algo delicioso para preparar.</p>
+        </div>
+        <span class="heading-emoji">🍰</span>
+      </div>
+
+      <div class="search-box">
+        <span>🔎</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Busca una receta... (ej. pasta)"
+          aria-label="Buscar recetas"
+        >
+        <button id="clearSearch" class="clear-button" type="button">
+          Limpiar
+        </button>
+      </div>
+
+      <div class="filters" aria-label="Filtrar recetas por categoría">
+        <button class="filter active" data-category="Todas">🍽️ Todas</button>
+        <button class="filter" data-category="Desayuno">🥞 Desayunos</button>
+        <button class="filter" data-category="Almuerzo">🍝 Almuerzos</button>
+        <button class="filter" data-category="Postre">🧁 Postres</button>
+        <button class="filter" data-category="Bebida">🍹 Bebidas</button>
+        <button class="filter" data-category="Favoritos">❤️ Favoritos</button>
+      </div>
+
+      <div class="results-info">
+        <h3>Nuestras recetas <span>✨</span></h3>
+        <p id="resultsCount" aria-live="polite"></p>
+      </div>
+
+      <div class="recipe-grid" id="recipeGrid"></div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🍳</span>
+        <h3>¡Oh! No ahi nada aqui...</h3>
+        <p>Prueba otra búsqueda o selecciona una categoría diferente.</p>
+        <button class="button primary" id="resetFilters" type="button">
+          Ver todas las recetas
+        </button>
+      </div>
+    </section>
+
+    <section class="banner" id="nosotros">
+      <div>
+        <span class="eyebrow">💛 COCINAR ES COMPARTIR</span>
+        <h2>Los mejores recuerdos<br>también se cocinan.</h2>
+        <p>
+          No necesitas ser un chef profesional.
+          Solo necesitas curiosidad, buenos ingredientes y muchas ganas.
+        </p>
+        <a class="button banner-button" href="#recetas">Encuentra tu receta →</a>
+      </div>
+      <div class="banner-emoji" aria-hidden="true">👩‍🍳🥑🍓</div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#inicio">🍓 Sazón Mágica</a>
+    <p>Hecho con ❤️ y una pizca de creatividad.</p>
+    <small>© <span id="year"></span> Sazón Mágica. Todos los derechos reservados.</small>
+  </footer>
+
+  <dialog id="recipeDialog" class="recipe-dialog">
+    <button id="closeDialog" class="dialog-close" type="button"
+      aria-label="Cerrar receta">✕</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
